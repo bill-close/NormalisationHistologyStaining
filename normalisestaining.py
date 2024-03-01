@@ -2,9 +2,9 @@ import argparse
 import numpy as np
 from PIL import Image
 
-def normalize_staining(img, save_file=None, Io=240, alpha=1, beta=0.15):
+def normalise_staining(img, save_file=None, Io=240, alpha=1, beta=0.15):
     """
-    Normalize staining appearance of H&E stained images
+    Normalise staining appearance of H&E stained images
 
     Args:
         img: RGB input image
@@ -14,12 +14,12 @@ def normalize_staining(img, save_file=None, Io=240, alpha=1, beta=0.15):
         beta: Threshold for transparent pixels (optional)
 
     Returns:
-        Inorm: Normalized image
+        Inorm: Normalised image
         H: Hematoxylin image
         E: Eosin image
 
     Reference: 
-        A method for normalizing histology slides for quantitative analysis. M.
+        A method for normalising histology slides for quantitative analysis. M.
         Macenko et al., ISBI 2009
     """
     # Reference values for hematoxylin and eosin
@@ -35,7 +35,7 @@ def normalize_staining(img, save_file=None, Io=240, alpha=1, beta=0.15):
     img = img.reshape((-1,3))
 
     # Calculate optical density
-    OD = -np.log((img.astype(np.float)+1)/Io)
+    OD = -np.log((img.astype(float)+1)/Io)
 
     # Remove pixels with optical density less than beta
     ODhat = OD[~np.any(OD<beta, axis=1)]
@@ -69,7 +69,7 @@ def normalize_staining(img, save_file=None, Io=240, alpha=1, beta=0.15):
     # Solve linear system to find concentrations
     C = np.linalg.lstsq(HE,Y, rcond=None)[0]
 
-    # Normalize stain concentrations
+    # Normalise stain concentrations
     maxC = np.array([np.percentile(C[0,:], 99), np.percentile(C[1,:],99)])
     tmp = np.divide(maxC,maxCRef)
     C2 = np.divide(C,tmp[:, np.newaxis])
@@ -109,8 +109,8 @@ if __name__=='__main__':
     # Load image
     img = np.array(Image.open(args.imageFile))
 
-    # Normalize staining
-    normalize_staining(img=img,
+    # Normalise staining
+    normalise_staining(img=img,
                        save_file=args.saveFile,
                        Io=args.Io,
                        alpha=args.alpha,
