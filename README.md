@@ -4,6 +4,7 @@ The Hematoxylin and Eosin (H&amp;E) stain is essential in histology, highlightin
 
 <img src="(https://github.com/bill-close/NormalisationHistologyStaining/assets/90579801/22a50606-aa3c-4276-92ec-fee8b60508a0)" width="200">
 
+![Uploading overview for readme white.png…]()
 
 
 To execute:
