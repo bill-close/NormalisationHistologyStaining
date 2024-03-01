@@ -1,9 +1,9 @@
 # NormalisationHistologyStaining
 The Hematoxylin and Eosin (H&amp;E) stain is essential in histology, highlighting nuclei in blue for clear tissue evaluation. For automated analysis, it's vital to normalize these images due to color variations from sample preparation and imaging.
 
-<p float="left">
+
 <img width="234" alt="image" src="[https://user-images.githubusercontent.com/90579801/137851479-46f50dcf-beed-4389-92de-d1e282f69dcd](https://github.com/bill-close/NormalisationHistologyStaining/assets/90579801/e43f2876-0f78-4b72-9880-b9a5d2e9178a).PNG" width=100% height=100%>
-</p>
+
 
 Publication reference:
 
