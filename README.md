@@ -7,6 +7,7 @@ The Hematoxylin and Eosin (H&amp;E) stain is essential in histology, highlightin
 
 ![overview for readme](https://github.com/bill-close/NormalisationHistologyStaining/assets/90579801/3340f9ad-277d-430d-94a8-bdae3e19106f)
 
+![overview for readme white](https://github.com/bill-close/NormalisationHistologyStaining/assets/90579801/b0b31e80-8825-46a3-a1ab-0c963ab78130)
 
 To execute:
 python normalisestaining.py --imageFile imgs/example.png --saveFile output/normalised
